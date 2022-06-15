@@ -1,0 +1,15 @@
+type Usuario {
+    id: ID!
+    nome: String!
+    sobrenome: String
+    email: String!
+    senha: String!
+}
+
+type Query {
+    getUsuarioById(id: ID): Usuario
+}
+
+type Mutation {
+    cadastrarUsuario(nome: String!, sobrenome: String!, email: String!, senha: String!): Usuario
+}
