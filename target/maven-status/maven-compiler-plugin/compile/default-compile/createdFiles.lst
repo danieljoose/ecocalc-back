@@ -8,9 +8,12 @@ br/com/ecocalc/repositories/UsuarioRepository.class
 br/com/ecocalc/security/jwt/JWTPreAuthenticationToken.class
 br/com/ecocalc/BarApplication.class
 br/com/ecocalc/controller/MainController.class
+br/com/ecocalc/payload/response/JwtResponse.class
 br/com/ecocalc/security/services/UserDetailsImpl.class
+br/com/ecocalc/services/AuthenticationService.class
 br/com/ecocalc/security/jwt/JWTPreAuthenticationToken$JWTPreAuthenticationTokenBuilder.class
 br/com/ecocalc/security/services/UserDetailsServiceImpl.class
 br/com/ecocalc/resolvers/mutation/UsuarioMutationResolver.class
 br/com/ecocalc/security/jwt/AuthEntryPointJwt.class
 br/com/ecocalc/security/jwt/AuthTokenFilter.class
+br/com/ecocalc/payload/response/MessageResponse.class

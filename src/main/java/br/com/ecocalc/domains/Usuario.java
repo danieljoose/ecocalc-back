@@ -6,9 +6,15 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.time.OffsetDateTime;
 
 @Data
 @Entity
+@Getter
+@Setter
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = "email") })
 public class Usuario implements Serializable {
 
@@ -76,5 +82,12 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    
+
+    OffsetDateTime ultimoAcesso;
+
+	@Column(columnDefinition = "bigint default 0")
+	Long numAcessos;
 
 }

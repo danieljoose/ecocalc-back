@@ -10,6 +10,12 @@ type Query {
     getUsuarioById(id: ID): Usuario
 }
 
+type JwtResponse {
+	token: String!
+}
+
 type Mutation {
     cadastrarUsuario(nome: String!, sobrenome: String!, email: String!, senha: String!): Usuario
+    signin(login: String!, senha: String!): JwtResponse!
+    registerUltimoAcesso(id: ID!): Usuario!
 }

@@ -12,8 +12,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 // import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
+import graphql.GraphQLException;
+
 
 import java.util.Optional;
+import java.time.OffsetDateTime;
 
 
 
@@ -60,6 +63,28 @@ public class UsuarioService {
 
 		return usuarioRepository.save(usuario);
 	}
+
+    public Optional<Usuario> findByEmail(String email) {
+		return usuarioRepository.findByEmail(email);
+	}
+
+    public Usuario salvar(Usuario usuario) {
+    	return usuarioRepository.save(usuario);
+    }
+
+    public Usuario registerUltimoAcesso(Long id){
+		Optional<Usuario> optionalUsuario = this.findById(id);
+
+		if(!optionalUsuario.isPresent()){
+			throw new GraphQLException("user_not_found");
+		}
+
+		Usuario usuario = optionalUsuario.get();
+		usuario.setUltimoAcesso(OffsetDateTime.now());
+		usuario.setNumAcessos(usuario.getNumAcessos() == null? 1: usuario.getNumAcessos() + 1);
+		return this.salvar(usuario);
+	}
+
 
 
 }
