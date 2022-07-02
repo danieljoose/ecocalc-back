@@ -1,0 +1,15 @@
+type Pessoa {
+    id: ID!
+    nome: String!
+    sobrenome: String!
+    usuarioId: ID!
+    residenciaId: ID!
+}
+
+extend type Query {
+    getPessoaById(id: ID!): Pessoa
+}
+
+extend type Mutation {
+    cadastrarPessoa(nome: String!, sobrenome: String!, residenciaId: ID, usuarioId: ID!): Pessoa!
+}

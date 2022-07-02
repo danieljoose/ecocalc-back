@@ -5,10 +5,16 @@ import br.com.ecocalc.domains.*;
 import br.com.ecocalc.repositories.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 // import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,16 +26,38 @@ import java.time.OffsetDateTime;
 
 
 
-@RestController
+@Service
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private ResidenciaRepository residenciaRepository;
         
     @Autowired
 	private PasswordEncoder encoder;
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
+    @Value("${jwt.senhaJwtExpirationMs}")
+	private int senhaJwtExpirationMs;
+
+
+    public Optional<Usuario> getRequester() {
+    try {
+            SecurityContext securityContext = SecurityContextHolder.getContext();
+            System.out.println(securityContext);
+            Authentication authentication = securityContext.getAuthentication();
+            System.out.println(authentication.getName());
+            UserDetails principal = (UserDetails) authentication.getPrincipal();
+            System.out.println(principal);
+            String email = principal.getUsername();
+            
+            Optional<Usuario> optionalUsuario = usuarioRepository.findByEmail(email);
+            return optionalUsuario;
+        } catch (Exception e) {
+            System.out.println(e);
+            return Optional.empty();
+        }
+	}
 
     public Usuario getUsuario(@RequestParam(value = "name", defaultValue = "World") String name){
         System.out.println(name);
@@ -57,11 +85,17 @@ public class UsuarioService {
         usuario.setSobrenome(nome);
         usuario.setEmail(email);
         usuario.setSenha(encodedSenha);
-		usuario = usuarioRepository.save(usuario);
+        usuario = usuarioRepository.save(usuario);
+
+        Residencia residencia = new Residencia();
+        residencia.setNome("Minha residência");
+        residencia.setUsuario(usuario);
+        residenciaRepository.save(residencia);
+
 
 		// enviarEmailValidacao(usuario.getEmail());
 
-		return usuarioRepository.save(usuario);
+		return usuario;
 	}
 
     public Optional<Usuario> findByEmail(String email) {

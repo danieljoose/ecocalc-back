@@ -69,7 +69,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/api/auth**",
 							 "/graphql**",
 							 "/graphiql**",
-                             "/playground**"
+                             "/playground**",
+							 "/**"
 							 ).permitAll()
 				.and()				
 				.addFilterBefore(authenticationJwtTokenFilter(), RequestHeaderAuthenticationFilter.class);

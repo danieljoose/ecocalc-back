@@ -1,0 +1,14 @@
+type Residencia {
+    id: ID!
+    nome: String!
+    usuarioId: ID!
+}
+
+extend type Query {
+    getResidenciaById(id: ID!): Residencia
+    getResidencias(usuarioId: ID!): [Residencia]
+}
+
+extend type Mutation {
+    cadastrarResidencia(nome: String!, usuarioId: ID!): Residencia!
+}
