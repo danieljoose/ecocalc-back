@@ -16,12 +16,10 @@ public class ResidenciaQueryResolver implements GraphQLQueryResolver{
     @Autowired
     private ResidenciaRepository residenciaRepository;
 
-    @Transactional
     public Optional<Residencia> getResidenciaById(Long id){
         return residenciaRepository.findById(id);
     }
-
-    @Transactional
+    
     public List<Residencia> getResidencias(Long usuarioId){
         return residenciaRepository.findAllByUsuario_Id(usuarioId);
     }

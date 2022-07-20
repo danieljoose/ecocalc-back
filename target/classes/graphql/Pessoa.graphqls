@@ -8,6 +8,7 @@ type Pessoa {
 
 extend type Query {
     getPessoaById(id: ID!): Pessoa
+    getPessoas(usuarioId: ID!): [Pessoa]
 }
 
 extend type Mutation {

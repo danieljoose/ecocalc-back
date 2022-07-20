@@ -1,3 +1,4 @@
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/DespesaRepository.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/UsuarioRepository.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/payload/response/MessageResponse.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/AuthenticationService.java
@@ -7,6 +8,7 @@
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/PessoaService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/mutation/UsuarioMutationResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/jwt/AuthTokenFilter.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/EcocalcCoreApplication.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/payload/response/JwtResponse.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/mutation/PessoaMutationResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/PessoaRepository.java
@@ -14,16 +16,19 @@
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/filters/CorsFilter.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/controller/MainController.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/jwt/AuthEntryPointJwt.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/exception/GraphQLErrorAdapter.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/Usuario.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/AbstractService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/Pessoa.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/jwt/JwtUtils.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/ResidenciaQueryResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/ResidenciaRepository.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/Despesa.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/mutation/ResidenciaMutationResolver.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/mutation/DespesaMutationResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/services/UserDetailsServiceImpl.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/ResidenciaService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/Residencia.java
-/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/BarApplication.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/PessoaQueryResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/UsuarioQueryResolver.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/DespesaService.java

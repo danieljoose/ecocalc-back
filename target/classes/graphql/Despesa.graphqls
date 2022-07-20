@@ -1,0 +1,14 @@
+type Despesa {
+    id: ID!
+    titulo: String!
+    valor: BigDecimal!
+    data: DateTime!
+    residencia: Residencia
+    pessoa: Pessoa
+    usuario: Usuario!
+}
+
+
+extend type Mutation {
+    cadastrarDespesa(titulo: String!, data: DateTime!, valor: BigDecimal!, residenciaId: ID, pessoaId: ID, usuarioId: ID!): Despesa
+}

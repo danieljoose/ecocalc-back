@@ -15,4 +15,6 @@ import java.util.Optional;
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
     Optional<Pessoa> findById(Long id);
 
+    List<Pessoa> findAllByUsuario_Id(Long usuarioId);
+
 }

@@ -83,16 +83,20 @@
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>11.0.0</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.graphql-java-kickstart</groupId>
 			<artifactId>playground-spring-boot-starter</artifactId>
 			<version>11.0.0</version>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java-servlet</artifactId>
 			<version>4.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-extended-scalars</artifactId>
+			<version>18.1</version>
 		</dependency>
 
 

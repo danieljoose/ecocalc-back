@@ -19,3 +19,7 @@ type Mutation {
     signin(login: String!, senha: String!): JwtResponse!
     registerUltimoAcesso(id: ID!): Usuario!
 }
+
+scalar DateTime
+scalar Time
+scalar BigDecimal

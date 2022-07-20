@@ -8,6 +8,7 @@ import br.com.ecocalc.repositories.*;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 
 import java.util.Optional;
+import java.util.List;
 
 
 @Component
@@ -15,8 +16,11 @@ public class PessoaQueryResolver implements GraphQLQueryResolver{
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    @Transactional
     public Optional<Pessoa> getPessoaById(Long id){
         return pessoaRepository.findById(id);
+    }
+
+    public List<Pessoa> getPessoas(Long usuarioId){
+        return pessoaRepository.findAllByUsuario_Id(usuarioId);
     }
 }
