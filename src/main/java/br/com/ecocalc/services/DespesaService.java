@@ -15,6 +15,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import java.util.List;
+
 
 // import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +48,7 @@ public class DespesaService {
     @Autowired
     private UsuarioService usuarioService;        
 
+   
     @Transactional
 	public Despesa cadastrarDespesa(String titulo, OffsetDateTime data, BigDecimal valor, Long residenciaId, Long pessoaId, Long usuarioId) {
 

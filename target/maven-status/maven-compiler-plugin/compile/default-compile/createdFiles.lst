@@ -21,10 +21,12 @@ br/com/ecocalc/payload/response/MessageResponse.class
 br/com/ecocalc/services/UsuarioService.class
 br/com/ecocalc/repositories/ResidenciaRepository.class
 br/com/ecocalc/resolvers/mutation/PessoaMutationResolver.class
+br/com/ecocalc/resolvers/query/HistoricoMesQueryResolver.class
 br/com/ecocalc/repositories/PessoaRepository.class
 br/com/ecocalc/filters/CorsFilter.class
 br/com/ecocalc/resolvers/query/PessoaQueryResolver.class
 br/com/ecocalc/repositories/UsuarioRepository.class
+br/com/ecocalc/domains/HistoricoMes.class
 br/com/ecocalc/security/jwt/JWTPreAuthenticationToken.class
 br/com/ecocalc/EcocalcCoreApplication$1.class
 br/com/ecocalc/services/DespesaService.class

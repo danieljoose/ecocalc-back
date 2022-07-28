@@ -15,4 +15,10 @@ import java.util.Optional;
 public interface DespesaRepository extends JpaRepository<Despesa, Long> {
     Optional<Despesa> findById(Long id);
 
+    List<Despesa> findByUsuario_IdOrderByDataDesc(Long usuarioId);
+
+    public List<Despesa> findByUsuario_IdAndResidencia_IdOrderByDataDesc(Long usuarioId, Long residenciaId);
+
+    public List<Despesa> findByUsuario_IdAndPessoa_IdOrderByDataDesc(Long usuarioId, Long pessoaId);
+
 }

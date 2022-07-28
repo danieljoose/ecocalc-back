@@ -1,0 +1,13 @@
+type HistoricoMes {
+    mes: Int
+    ano: Int
+    valorTotal: BigDecimal
+    despesas: [Despesa]
+    residencias: [Residencia]
+    pessoas: [Pessoa]
+}
+
+
+extend type Query {
+    getHistoricoMes(usuarioId: ID, residenciaId: ID, pessoaId: ID): [HistoricoMes]
+}

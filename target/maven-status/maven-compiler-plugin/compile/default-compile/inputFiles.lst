@@ -1,7 +1,9 @@
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/DespesaRepository.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/repositories/UsuarioRepository.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/payload/response/MessageResponse.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/HistoricoMesQueryResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/AuthenticationService.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/HistoricoMes.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/UsuarioService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/services/UserDetailsImpl.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/WebSecurityConfig.java
