@@ -6,6 +6,7 @@ br/com/ecocalc/resolvers/query/UsuarioQueryResolver.class
 br/com/ecocalc/security/WebSecurityConfig.class
 br/com/ecocalc/services/AbstractService.class
 br/com/ecocalc/domains/Usuario.class
+br/com/ecocalc/services/HistoricoMesService.class
 br/com/ecocalc/EcocalcCoreApplication.class
 br/com/ecocalc/repositories/DespesaRepository.class
 br/com/ecocalc/domains/Residencia.class
