@@ -53,7 +53,7 @@ public class ResidenciaService {
         residencia.setUsuario(optionalUsuario.get());
         residenciaRepository.save(residencia);
 
-        if(pessoaId){
+        if(pessoaId == null){
             Pessoa pessoa = pessoaRepository.findById(pessoaId).get();
             pessoa.setResidencia(residencia);
             pessoaRepository.save(pessoa);
