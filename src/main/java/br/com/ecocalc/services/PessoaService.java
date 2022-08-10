@@ -58,7 +58,7 @@ public class PessoaService {
         
         pessoa.setUsuario(optionalUsuario.get());
         pessoa.setNome(nome);
-        pessoa.setSobrenome(nome);
+        pessoa.setSobrenome(sobrenome);
         pessoaRepository.save(pessoa);
 
 

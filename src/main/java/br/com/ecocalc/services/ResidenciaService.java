@@ -53,9 +53,13 @@ public class ResidenciaService {
         residencia.setUsuario(optionalUsuario.get());
         residenciaRepository.save(residencia);
 
-        Pessoa pessoa = pessoaRepository.findById(pessoaId).get();
-        pessoa.setResidencia(residencia);
-        pessoaRepository.save(pessoa);
+        if(pessoaId){
+            Pessoa pessoa = pessoaRepository.findById(pessoaId).get();
+            pessoa.setResidencia(residencia);
+            pessoaRepository.save(pessoa);
+        }
+
+        
 
 
 		// enviarEmailValidacao(usuario.getEmail());
