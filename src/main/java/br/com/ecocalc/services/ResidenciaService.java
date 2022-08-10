@@ -33,13 +33,16 @@ public class ResidenciaService {
     private ResidenciaRepository residenciaRepository;
 
     @Autowired
+    private PessoaRepository pessoaRepository;
+
+    @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Autowired
     private UsuarioService usuarioService;        
 
     @Transactional
-	public Residencia cadastrarResidencia(String nome, Long usuarioId) {
+	public Residencia cadastrarResidencia(String nome, Long pessoaId, Long usuarioId) {
 	    Optional<Usuario> optionalUsuario = usuarioRepository.findById(usuarioId);
         System.out.println(optionalUsuario);
         if (!optionalUsuario.isPresent())
@@ -49,6 +52,10 @@ public class ResidenciaService {
         residencia.setNome(nome);
         residencia.setUsuario(optionalUsuario.get());
         residenciaRepository.save(residencia);
+
+        Pessoa pessoa = pessoaRepository.findById(pessoaId).get();
+        pessoa.setResidencia(residencia);
+        pessoaRepository.save(pessoa);
 
 
 		// enviarEmailValidacao(usuario.getEmail());

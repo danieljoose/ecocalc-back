@@ -31,6 +31,7 @@
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/security/services/UserDetailsServiceImpl.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/ResidenciaService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/domains/Residencia.java
+/home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/HistoricoMesService.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/PessoaQueryResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/resolvers/query/UsuarioQueryResolver.java
 /home/daniel/ecocalc/ecocalc-back/src/main/java/br/com/ecocalc/services/DespesaService.java

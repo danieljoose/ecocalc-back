@@ -3,12 +3,13 @@ type Pessoa {
     nome: String!
     sobrenome: String!
     usuarioId: ID!
-    residenciaId: ID!
+    residenciaId: ID
 }
 
 extend type Query {
     getPessoaById(id: ID!): Pessoa
     getPessoas(usuarioId: ID!): [Pessoa]
+    getPessoasSemResidencia(usuarioId: ID!): [Pessoa]
 }
 
 extend type Mutation {

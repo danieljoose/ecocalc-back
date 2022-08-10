@@ -74,9 +74,11 @@ public class UsuarioService {
 
     @Transactional
 	public Usuario cadastrarUsuario(String nome, String sobrenome, String email, String senha) {
-		// if (usuarioRepository.existsByEmail(email)) {
-		// 	throw new GraphQLException("email_already_exists");
-		// }
+        System.out.println(email);
+        Optional<Usuario> optionalUsuario = usuarioRepository.findByEmail(email);
+		if (optionalUsuario.isPresent()) {
+			throw new GraphQLException("email_already_exists");
+		}
 
         String encodedSenha = encoder.encode(senha);
 

@@ -10,5 +10,5 @@ extend type Query {
 }
 
 extend type Mutation {
-    cadastrarResidencia(nome: String!, usuarioId: ID!): Residencia!
+    cadastrarResidencia(nome: String!, pessoaId: ID, usuarioId: ID!): Residencia!
 }

@@ -17,4 +17,13 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
     List<Pessoa> findAllByUsuario_Id(Long usuarioId);
 
+    @Query(value =
+    "SELECT * " +
+        "FROM pessoa " +
+        "WHERE usuario_id = :usuarioId " +
+        "AND residencia_id IS NULL " +
+        "ORDER BY nome ASC", nativeQuery = true)
+    List<Pessoa> findPessoasSemResidencia(Long usuarioId);
+
+
 }

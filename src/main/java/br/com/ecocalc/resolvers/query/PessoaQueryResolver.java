@@ -23,4 +23,8 @@ public class PessoaQueryResolver implements GraphQLQueryResolver{
     public List<Pessoa> getPessoas(Long usuarioId){
         return pessoaRepository.findAllByUsuario_Id(usuarioId);
     }
+
+    public List<Pessoa> getPessoasSemResidencia(Long usuarioId){
+        return pessoaRepository.findPessoasSemResidencia(usuarioId);
+    }
 }

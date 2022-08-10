@@ -24,13 +24,13 @@ public class HistoricoMesService{
     public List<HistoricoMes> getHistoricoMes(Long usuarioId, Long residenciaId, Long pessoaId){
         List<Despesa> despesas = new ArrayList<>();
 
-System.out.println("OPA, ZERO! " + pessoaId);
         if(pessoaId != null && pessoaId == 0) {
-            System.out.println("OPA, ZERO! " + pessoaId);
+            System.out.println("OPA, PESSOA! " + pessoaId);
             despesas = despesaRepository.findAllPessoaByUsuario_Id(usuarioId);
-        }
-
-        else if(pessoaId != null) {
+        } else if(residenciaId != null && residenciaId == 0) {
+            System.out.println("OPA, RESIDENCIA! " + residenciaId);
+            despesas = despesaRepository.findAllResidenciaByUsuario_Id(usuarioId);
+        } else if(pessoaId != null) {
             despesas = despesaRepository.findByUsuario_IdAndPessoa_IdOrderByDataDesc(usuarioId, pessoaId);
         } else if (residenciaId != null) {
             despesas = despesaRepository.findByUsuario_IdAndResidencia_IdOrderByDataDesc(usuarioId, residenciaId);
@@ -55,6 +55,7 @@ System.out.println("OPA, ZERO! " + pessoaId);
                     if(!pessoasMes.contains(despesa.getPessoa()) && despesa.getPessoa() != null){
                     
                         pessoasMes.add(despesa.getPessoa());
+
                     }
 
                     if(!residenciasMes.contains(despesa.getResidencia()) && despesa.getResidencia() != null){

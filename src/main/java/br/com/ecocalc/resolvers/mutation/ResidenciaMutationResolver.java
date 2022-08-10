@@ -25,9 +25,9 @@ public class ResidenciaMutationResolver implements GraphQLMutationResolver{
     @Autowired
     private ResidenciaService residenciaService;
 
-    public Residencia cadastrarResidencia(String nome, Long usuarioId) {
+    public Residencia cadastrarResidencia(String nome, Long pessoaId, Long usuarioId) {
         System.out.println(nome);
-        return residenciaService.cadastrarResidencia(nome, usuarioId);
+        return residenciaService.cadastrarResidencia(nome, pessoaId, usuarioId);
     }
 
 }

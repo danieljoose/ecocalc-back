@@ -65,6 +65,8 @@ public class DespesaService {
         } else {
             Optional<Pessoa> optionalPessoa = pessoaRepository.findById(pessoaId);
             despesa.setPessoa(optionalPessoa.get());
+            despesa.setResidencia(optionalPessoa.get().getResidencia());
+
         }        
         
         despesa.setUsuario(optionalUsuario.get());

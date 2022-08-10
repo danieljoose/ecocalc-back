@@ -30,6 +30,13 @@ public interface DespesaRepository extends JpaRepository<Despesa, Long> {
             "ORDER BY data DESC", nativeQuery = true)
     List<Despesa> findAllPessoaByUsuario_Id(Long usuarioId);
 
-    
+   @Query(value =
+        "SELECT * " +
+            "FROM despesa " +
+            "WHERE usuario_id = :usuarioId " +
+            "AND residencia_id IS NOT NULL " +
+            "ORDER BY data DESC", nativeQuery = true)
+    List<Despesa> findAllResidenciaByUsuario_Id(Long usuarioId);
+
 
 }
